@@ -3,12 +3,52 @@
     <node name="R1" type="SIMPLE" subtype="IOS XRv 9000" location="204,187">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!! IOS XR Configuration version = 6.0.1
+!! Last configuration change at Tue Aug 30 17:54:40 2016 by admin
+!
+hostname R1
+username admin
+ group root-lr
+ group cisco-support
+ secret 5 $1$vdkJ$tFA5j9Sp51277k6jh2I5c/
+!
+call-home
+ service active
+ contact smart-licensing
+ profile CiscoTAC-1
+  active
+  destination transport-method http
+ !
+!
+interface MgmtEth0/RP0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 140.1.1.1 255.255.255.0
+!
+end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/0/0/0"/>
     </node>
     <node name="R2" type="SIMPLE" subtype="IOS XRv 9000" location="377,182">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!! IOS XR Configuration version = 6.0.1
+!! Last configuration change at Tue Aug 30 17:54:23 2016 by admin
+!
+hostname R2
+username admin
+ group root-lr
+ group cisco-support
+ secret 5 $1$.I.b$CPQyCdg1BbLg5IPUXLevc1
+!
+interface MgmtEth0/RP0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 140.1.1.2 255.255.255.0
+!
+end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/0/0/0"/>
     </node>
