@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<topology xmlns="http://www.cisco.com/VIRL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.95" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.95/virl.xsd">
+    <node name="iol-1" type="SIMPLE" subtype="IOL" location="421,256">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+        <interface id="2" name="Ethernet0/3"/>
+        <interface id="3" name="Ethernet1/0"/>
+    </node>
+    <node name="iol-2" type="SIMPLE" subtype="IOL" location="557,250">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+        <interface id="2" name="Ethernet0/3"/>
+        <interface id="3" name="Ethernet1/0"/>
+    </node>
+    <node name="iol-3" type="SIMPLE" subtype="IOL" location="215,324">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+        <interface id="2" name="Ethernet0/3"/>
+        <interface id="3" name="Ethernet1/0"/>
+        <interface id="4" name="Ethernet1/1"/>
+    </node>
+    <node name="iol-4" type="SIMPLE" subtype="IOL" location="377,320">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+        <interface id="2" name="Ethernet0/3"/>
+        <interface id="3" name="Ethernet1/0"/>
+        <interface id="4" name="Ethernet1/1"/>
+    </node>
+    <node name="iol-5" type="SIMPLE" subtype="IOL" location="611,321">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+        <interface id="2" name="Ethernet0/3"/>
+        <interface id="3" name="Ethernet1/0"/>
+        <interface id="4" name="Ethernet1/1"/>
+    </node>
+    <node name="iol-6" type="SIMPLE" subtype="IOL" location="704,312">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+        <interface id="2" name="Ethernet0/3"/>
+        <interface id="3" name="Ethernet1/0"/>
+        <interface id="4" name="Ethernet1/1"/>
+    </node>
+    <node name="iol-7" type="SIMPLE" subtype="IOL" location="146,381">
+        <interface id="0" name="Ethernet0/1"/>
+    </node>
+    <node name="iol-8" type="SIMPLE" subtype="IOL" location="386,385">
+        <interface id="0" name="Ethernet0/1"/>
+    </node>
+    <node name="iol-9" type="SIMPLE" subtype="IOL" location="210,435">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+    </node>
+    <node name="iol-10" type="SIMPLE" subtype="IOL" location="369,439">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+    </node>
+    <node name="iol-11" type="SIMPLE" subtype="IOL" location="601,442">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+        <interface id="2" name="Ethernet0/3"/>
+    </node>
+    <node name="iol-12" type="SIMPLE" subtype="IOL" location="706,441">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+        <interface id="2" name="Ethernet0/3"/>
+    </node>
+    <node name="iol-13" type="SIMPLE" subtype="IOL" location="246,525">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+    </node>
+    <node name="iol-14" type="SIMPLE" subtype="IOL" location="805,306">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+    </node>
+    <node name="iol-15" type="SIMPLE" subtype="IOL" location="799,444">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+        <interface id="2" name="Ethernet0/3"/>
+        <interface id="3" name="Ethernet1/0"/>
+        <interface id="4" name="Ethernet1/1"/>
+    </node>
+    <node name="iol-16" type="SIMPLE" subtype="IOL" location="872,302">
+        <interface id="0" name="Ethernet0/1"/>
+    </node>
+    <node name="iol-17" type="SIMPLE" subtype="IOL" location="835,216"/>
+    <node name="iol-18" type="SIMPLE" subtype="IOL" location="868,439">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+        <interface id="2" name="Ethernet0/3"/>
+        <interface id="3" name="Ethernet1/0"/>
+    </node>
+    <node name="iol-19" type="SIMPLE" subtype="IOL" location="759,556">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+    </node>
+    <node name="iol-20" type="SIMPLE" subtype="IOL" location="834,550">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+    </node>
+    <node name="iol-21" type="SIMPLE" subtype="IOL" location="909,550">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+    </node>
+    <node name="iol-22" type="SIMPLE" subtype="IOL" location="63,160">
+        <interface id="0" name="Ethernet0/1"/>
+    </node>
+    <node name="iol-23" type="SIMPLE" subtype="IOL" location="184,156">
+        <interface id="0" name="Ethernet0/1"/>
+    </node>
+    <node name="iol-24" type="SIMPLE" subtype="IOL" location="127,95">
+        <interface id="0" name="Ethernet0/1"/>
+    </node>
+    <node name="iol-25" type="SIMPLE" subtype="IOL" location="127,247">
+        <interface id="0" name="Ethernet0/1"/>
+        <interface id="1" name="Ethernet0/2"/>
+    </node>
+    <node name="unmanagedswitch-1" type="SIMPLE" subtype="Unmanaged Switch" location="126,181">
+        <interface id="0" name="link1"/>
+        <interface id="1" name="link2"/>
+        <interface id="2" name="link3"/>
+        <interface id="3" name="link4"/>
+    </node>
+    <node name="iosvl2-1" type="SIMPLE" subtype="IOSvL2" location="221,373">
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet1/0"/>
+    </node>
+    <node name="iosvl2-2" type="SIMPLE" subtype="IOSvL2" location="317,371">
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet1/0"/>
+    </node>
+    <node name="iosvl2-3" type="SIMPLE" subtype="IOSvL2" location="609,368">
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="iosvl2-4" type="SIMPLE" subtype="IOSvL2" location="693,368">
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="iosvl2-5" type="SIMPLE" subtype="IOSvL2" location="835,366">
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet1/0"/>
+    </node>
+    <node name="iosvl2-6" type="SIMPLE" subtype="IOSvL2" location="243,583">
+        <interface id="0" name="GigabitEthernet0/1"/>
+    </node>
+    <annotations/>
+    <connection dst="/virl:topology/virl:node[24]/virl:interface[1]" src="/virl:topology/virl:node[26]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[22]/virl:interface[1]" src="/virl:topology/virl:node[26]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[23]/virl:interface[1]" src="/virl:topology/virl:node[26]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[25]/virl:interface[1]" src="/virl:topology/virl:node[26]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[1]" src="/virl:topology/virl:node[25]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[1]" src="/virl:topology/virl:node[3]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[1]/virl:interface[1]" src="/virl:topology/virl:node[4]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[1]" src="/virl:topology/virl:node[4]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[1]/virl:interface[2]" src="/virl:topology/virl:node[3]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[2]" src="/virl:topology/virl:node[3]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[1]/virl:interface[3]" src="/virl:topology/virl:node[5]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[3]" src="/virl:topology/virl:node[5]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[1]/virl:interface[4]" src="/virl:topology/virl:node[6]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[4]" src="/virl:topology/virl:node[6]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[27]/virl:interface[1]" src="/virl:topology/virl:node[3]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[27]/virl:interface[2]" src="/virl:topology/virl:node[7]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[27]/virl:interface[3]" src="/virl:topology/virl:node[9]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[28]/virl:interface[1]" src="/virl:topology/virl:node[10]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[28]/virl:interface[2]" src="/virl:topology/virl:node[8]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[28]/virl:interface[3]" src="/virl:topology/virl:node[4]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[28]/virl:interface[4]" src="/virl:topology/virl:node[27]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[5]/virl:interface[3]" src="/virl:topology/virl:node[4]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[11]/virl:interface[1]" src="/virl:topology/virl:node[10]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[29]/virl:interface[1]" src="/virl:topology/virl:node[11]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[29]/virl:interface[2]" src="/virl:topology/virl:node[5]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[6]/virl:interface[3]" src="/virl:topology/virl:node[5]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[30]/virl:interface[1]" src="/virl:topology/virl:node[6]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[30]/virl:interface[2]" src="/virl:topology/virl:node[12]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[30]/virl:interface[3]" src="/virl:topology/virl:node[29]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[12]/virl:interface[2]" src="/virl:topology/virl:node[11]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[14]/virl:interface[1]" src="/virl:topology/virl:node[6]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[15]/virl:interface[1]" src="/virl:topology/virl:node[12]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[31]/virl:interface[1]" src="/virl:topology/virl:node[15]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[31]/virl:interface[2]" src="/virl:topology/virl:node[14]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[31]/virl:interface[3]" src="/virl:topology/virl:node[16]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[18]/virl:interface[1]" src="/virl:topology/virl:node[31]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[19]/virl:interface[1]" src="/virl:topology/virl:node[15]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[19]/virl:interface[2]" src="/virl:topology/virl:node[18]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[20]/virl:interface[1]" src="/virl:topology/virl:node[15]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[20]/virl:interface[2]" src="/virl:topology/virl:node[18]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[21]/virl:interface[1]" src="/virl:topology/virl:node[15]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[21]/virl:interface[2]" src="/virl:topology/virl:node[18]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[13]/virl:interface[1]" src="/virl:topology/virl:node[9]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[32]/virl:interface[1]" src="/virl:topology/virl:node[13]/virl:interface[2]"/>
+</topology>
