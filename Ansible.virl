@@ -3,12 +3,20 @@
     <extensions>
         <entry key="management_network" type="String">flat</entry>
     </extensions>
-    <node name="ext-router-1" type="ASSET" subtype="EXT-ROUTER" location="386,249">
+    <node name="ansible" type="SIMPLE" subtype="server" location="230,306">
+        <interface id="0" name="eth1"/>
+        <interface id="1" name="eth2"/>
+    </node>
+    <node name="snat-1" type="ASSET" subtype="SNAT" location="333,188">
         <interface id="0" name="link0"/>
     </node>
-    <node name="server-1" type="SIMPLE" subtype="server" location="230,306">
-        <interface id="0" name="eth1"/>
+    <node name="iosvl2-1" type="SIMPLE" subtype="IOSvL2" location="355,291">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
     </node>
     <annotations/>
-    <connection dst="/virl:topology/virl:node[1]/virl:interface[1]" src="/virl:topology/virl:node[2]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[2]"/>
 </topology>
