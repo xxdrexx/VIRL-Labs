@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<topology xmlns="http://www.cisco.com/VIRL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.95" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.95/virl.xsd">
+    <node name="er1.oak" type="SIMPLE" subtype="IOSv" location="103,136">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+    </node>
+    <node name="er2.oak" type="SIMPLE" subtype="IOSv" location="170,135">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="BB1" type="SIMPLE" subtype="IOSv" location="294,219">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="er2.las" type="SIMPLE" subtype="IOSv" location="169,332">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
+    </node>
+    <node name="er1.las" type="SIMPLE" subtype="IOSv" location="168,290">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
+    </node>
+    <node name="er3.iad" type="SIMPLE" subtype="IOSv" location="480,292">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
+        <interface id="4" name="GigabitEthernet0/5"/>
+    </node>
+    <node name="er1.iad" type="SIMPLE" subtype="IOSv" location="579,294">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+    </node>
+    <node name="er4.iad" type="SIMPLE" subtype="IOSv" location="480,332">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
+    </node>
+    <node name="er2.iad" type="SIMPLE" subtype="IOSv" location="578,331">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+    </node>
+    <node name="er3.dub" type="SIMPLE" subtype="IOSv" location="478,101">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
+    </node>
+    <node name="er1.dub" type="SIMPLE" subtype="IOSv" location="589,100">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+    </node>
+    <node name="er4.dub" type="SIMPLE" subtype="IOSv" location="479,150">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
+        <interface id="4" name="GigabitEthernet0/5"/>
+    </node>
+    <node name="er2.dub" type="SIMPLE" subtype="IOSv" location="588,148">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+    </node>
+    <node name="er1.hkg" type="SIMPLE" subtype="IOSv" location="239,419">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="er2.hkg" type="SIMPLE" subtype="IOSv" location="303,417">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="er1.ams" type="SIMPLE" subtype="IOSv" location="294,91">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
+    </node>
+    <node name="er2.ams" type="SIMPLE" subtype="IOSv" location="363,90">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="BB2" type="SIMPLE" subtype="IOSv" location="350,219">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
+        <interface id="4" name="GigabitEthernet0/5"/>
+        <interface id="5" name="GigabitEthernet0/6"/>
+    </node>
+    <node name="BB3" type="SIMPLE" subtype="IOSv" location="403,218">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
+        <interface id="4" name="GigabitEthernet0/5"/>
+        <interface id="5" name="GigabitEthernet0/6"/>
+    </node>
+    <node name="BB4" type="SIMPLE" subtype="IOSv" location="458,217">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <annotations>
+        <ellipse x="38" y="37" width="200" height="149" fill="CCCCCC" stroke-width="3"/>
+        <rect x="97" y="258" radius="10" width="551" height="112" fill="CCCCCC" stroke-width="3"/>
+        <rect x="255" y="57" radius="10" width="392" height="121" fill="CCCCCC" stroke-width="3"/>
+        <rect x="197" y="386" radius="10" width="187" height="85" fill="CCCCCC" stroke-width="3"/>
+        <text x="210" y="444" font-size="18">AskAPAC AS132368</text>
+        <text x="243" y="336" font-size="18">AS-ASKCOM AS16798</text>
+        <text x="398" y="62" font-size="18">AskEU AS199203</text>
+        <text x="684" y="310" font-size="18">CGM AS25986</text>
+        <text x="54" y="79" font-size="18">ASK-WEST AS36135</text>
+        <text x="260" y="491" font-size="14">103.15.38.0/24</text>
+        <text x="476" y="351" font-size="14">66.235.112.0/12</text>
+        <text x="299" y="60" font-size="14">185.23.44.0/22</text>
+        <text x="81" y="60" font-size="14">199.190.255.0/24</text>
+    </annotations>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[17]/virl:interface[1]" src="/virl:topology/virl:node[16]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[12]/virl:interface[1]" src="/virl:topology/virl:node[10]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[13]/virl:interface[1]" src="/virl:topology/virl:node[11]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[1]" src="/virl:topology/virl:node[5]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[8]/virl:interface[1]" src="/virl:topology/virl:node[6]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[9]/virl:interface[1]" src="/virl:topology/virl:node[7]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[15]/virl:interface[1]" src="/virl:topology/virl:node[14]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[18]/virl:interface[1]" src="/virl:topology/virl:node[2]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[18]/virl:interface[2]" src="/virl:topology/virl:node[5]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[2]" src="/virl:topology/virl:node[19]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[2]" src="/virl:topology/virl:node[14]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[19]/virl:interface[2]" src="/virl:topology/virl:node[15]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[20]/virl:interface[1]" src="/virl:topology/virl:node[6]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[19]/virl:interface[3]" src="/virl:topology/virl:node[8]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[18]/virl:interface[3]" src="/virl:topology/virl:node[16]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[19]/virl:interface[4]" src="/virl:topology/virl:node[17]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[18]/virl:interface[4]" src="/virl:topology/virl:node[10]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[20]/virl:interface[2]" src="/virl:topology/virl:node[12]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[11]/virl:interface[2]" src="/virl:topology/virl:node[10]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[13]/virl:interface[2]" src="/virl:topology/virl:node[12]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[7]/virl:interface[2]" src="/virl:topology/virl:node[6]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[9]/virl:interface[2]" src="/virl:topology/virl:node[8]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[12]/virl:interface[4]" src="/virl:topology/virl:node[6]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[10]/virl:interface[4]" src="/virl:topology/virl:node[17]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[12]/virl:interface[5]" src="/virl:topology/virl:node[16]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[5]/virl:interface[3]" src="/virl:topology/virl:node[2]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[3]" src="/virl:topology/virl:node[14]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[6]/virl:interface[5]" src="/virl:topology/virl:node[5]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[8]/virl:interface[4]" src="/virl:topology/virl:node[4]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[15]/virl:interface[3]" src="/virl:topology/virl:node[16]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[18]/virl:interface[5]" src="/virl:topology/virl:node[3]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[18]/virl:interface[6]" src="/virl:topology/virl:node[19]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[19]/virl:interface[6]" src="/virl:topology/virl:node[20]/virl:interface[3]"/>
+</topology>
