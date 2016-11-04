@@ -184,6 +184,8 @@
         <text x="476" y="351" font-size="14">66.235.112.0/12</text>
         <text x="299" y="60" font-size="14">185.23.44.0/22</text>
         <text x="81" y="60" font-size="14">199.190.255.0/24</text>
+        <text x="174" y="99" font-size="18">40597</text>
+        <text x="695" y="332" font-size="14">208.85.8.0/24</text>
     </annotations>
     <connection dst="/virl:topology/virl:node[2]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
     <connection dst="/virl:topology/virl:node[17]/virl:interface[1]" src="/virl:topology/virl:node[16]/virl:interface[1]"/>
