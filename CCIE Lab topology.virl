@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <topology xmlns="http://www.cisco.com/VIRL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.95" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.95/virl.xsd">
+    <node name="R20" type="SIMPLE" subtype="IOSv" location="54,122">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+    </node>
+    <node name="unmanagedswitch-1" type="SIMPLE" subtype="Unmanaged Switch" location="55,208"/>
+    <node name="server-1" type="SIMPLE" subtype="server" location="17,265"/>
+    <node name="server-2" type="SIMPLE" subtype="server" location="88,267"/>
+    <node name="R1" type="SIMPLE" subtype="IOSv" location="254,206"/>
+    <node name="R2" type="SIMPLE" subtype="IOSv" location="170,116"/>
+    <node name="R3" type="SIMPLE" subtype="IOSv" location="310,117"/>
+    <node name="R4" type="SIMPLE" subtype="IOSv" location="161,199"/>
+    <node name="R5" type="SIMPLE" subtype="IOSv" location="321,195"/>
+    <node name="R6" type="SIMPLE" subtype="IOSv" location="196,265"/>
+    <node name="R7" type="SIMPLE" subtype="IOSv" location="300,263"/>
+    <node name="SW1" type="SIMPLE" subtype="IOSvL2" location="204,162"/>
+    <node name="SW2" type="SIMPLE" subtype="IOSvL2" location="279,156"/>
+    <node name="BB1" type="SIMPLE" subtype="IOSv" location="274,37"/>
+    <node name="BB2" type="SIMPLE" subtype="IOSv" location="419,28"/>
+    <node name="R8" type="SIMPLE" subtype="IOSv" location="402,115"/>
+    <node name="R9" type="SIMPLE" subtype="IOSv" location="496,108"/>
+    <node name="R10" type="SIMPLE" subtype="IOSv" location="396,256"/>
+    <node name="R11" type="SIMPLE" subtype="IOSv" location="494,251"/>
+    <node name="SW3" type="SIMPLE" subtype="IOSvL2" location="398,179"/>
+    <node name="SW4" type="SIMPLE" subtype="IOSvL2" location="485,176"/>
+    <node name="BB5" type="SIMPLE" subtype="IOSv" location="565,172"/>
+    <node name="BB3" type="SIMPLE" subtype="IOSv" location="288,314"/>
+    <node name="BB4" type="SIMPLE" subtype="IOSv" location="407,308"/>
+    <node name="R12" type="SIMPLE" subtype="IOSv" location="240,367"/>
+    <node name="R13" type="SIMPLE" subtype="IOSv" location="344,368"/>
+    <node name="R14" type="SIMPLE" subtype="IOSv" location="447,363"/>
+    <node name="server-3" type="SIMPLE" subtype="server" location="237,428"/>
+    <node name="server-4" type="SIMPLE" subtype="server" location="345,421"/>
+    <node name="server-5" type="SIMPLE" subtype="server" location="444,417"/>
+    <node name="R15" type="SIMPLE" subtype="IOL" location="712,107"/>
+    <node name="R16" type="SIMPLE" subtype="IOL" location="661,201"/>
+    <node name="R17" type="SIMPLE" subtype="IOL" location="757,194"/>
+    <node name="BB7" type="SIMPLE" subtype="IOL" location="708,262"/>
+    <node name="R18" type="SIMPLE" subtype="IOL" location="656,307"/>
+    <node name="R19" type="SIMPLE" subtype="IOL" location="754,298"/>
+    <node name="SW5" type="SIMPLE" subtype="IOL-L2" location="642,129"/>
+    <node name="SW6" type="SIMPLE" subtype="IOL-L2" location="783,124"/>
+    <node name="server-6" type="SIMPLE" subtype="server" location="653,410"/>
+    <node name="server-7" type="SIMPLE" subtype="server" location="755,404"/>
     <annotations/>
 </topology>
