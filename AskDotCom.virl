@@ -4,7 +4,7 @@
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:12 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:08 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -69,7 +69,7 @@ interface Loopback0
  ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.192 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -166,7 +166,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:02:55 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:31 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -231,7 +231,7 @@ interface Loopback0
  ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.198 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -334,7 +334,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:35 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:58 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -394,7 +394,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.183 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -479,7 +479,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:30 UTC Wed Nov 16 2016
+! Last configuration change at 21:55:05 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -517,6 +517,7 @@ ip cef
 no ipv6 cef
 !
 multilink bundle-name authenticated
+mpls label protocol ldp
 !
 !
 !
@@ -538,36 +539,62 @@ redundancy
 !
 !
 !
+interface Loopback0
+ ip address 66.235.115.2 255.255.255.255
+ ip ospf 1 area 0
+!
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.197 255.255.0.0
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
+ description er1.las:g0/1
  no ip address
  duplex auto
  speed auto
  media-type rj45
 !
+interface GigabitEthernet0/1.2
+ description VLAN2-L3
+ encapsulation dot1Q 2
+ ip address 66.235.114.253 255.255.255.0
+ standby 2 ip 66.235.114.254
+ standby 2 preempt
+!
+interface GigabitEthernet0/1.10
+ description P2P - MPLS
+ encapsulation dot1Q 10
+ ip address 66.235.115.202 255.255.255.252
+ ip ospf 1 area 0
+!
 interface GigabitEthernet0/2
- no ip address
+ description ZAYO
+ ip address 208.185.102.206 255.255.255.252
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/3
- no ip address
+ description er1.hkg:gi0/3
+ ip address 66.235.115.213 255.255.255.252
+ ip ospf 1 area 0
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/4
- no ip address
+ description er4.iad:gi0/4
+ ip address 66.235.115.210 255.255.255.252
+ ip ospf 1 area 0
  duplex auto
  speed auto
  media-type rj45
+!
+router ospf 1
+ mpls ldp autoconfig
 !
 ip forward-protocol nd
 !
@@ -577,6 +604,7 @@ no ip http secure-server
 !
 !
 !
+mpls ldp router-id Loopback0
 !
 control-plane
 !
@@ -630,7 +658,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:17 UTC Wed Nov 16 2016
+! Last configuration change at 21:53:57 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -695,7 +723,7 @@ interface Loopback0
  ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.191 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -810,7 +838,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:00 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:50 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -848,6 +876,7 @@ ip cef
 no ipv6 cef
 !
 multilink bundle-name authenticated
+mpls label protocol ldp
 !
 !
 !
@@ -865,22 +894,39 @@ redundancy
 !
 !
 !
+bridge irb
 !
 !
 !
+!
+interface Loopback0
+ ip address 66.235.125.106 255.255.255.255
+ ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.200 255.255.0.0
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
+ description er4.iad:gi0/1
  no ip address
  duplex auto
  speed auto
  media-type rj45
+!
+interface GigabitEthernet0/1.2
+ description VLAN2 - External
+ encapsulation dot1Q 2
+ bridge-group 2
+!
+interface GigabitEthernet0/1.10
+ description P2P - MPLS
+ encapsulation dot1Q 10
+ ip address 66.235.125.77 255.255.255.252
+ ip ospf 1 area 0
 !
 interface GigabitEthernet0/2
  no ip address
@@ -901,10 +947,18 @@ interface GigabitEthernet0/4
  media-type rj45
 !
 interface GigabitEthernet0/5
- no ip address
+ description er1.las:gi0/4
+ ip address 66.235.115.205 255.255.255.252
+ ip ospf 1 area 0
  duplex auto
  speed auto
  media-type rj45
+!
+interface BVI2
+ description VLAN2-L3
+ ip address 66.235.121.200 255.255.254.0
+!
+router ospf 1
 !
 ip forward-protocol nd
 !
@@ -914,9 +968,12 @@ no ip http secure-server
 !
 !
 !
+mpls ldp router-id Loopback0
 !
 control-plane
 !
+bridge 2 protocol ieee
+bridge 2 route ip
 banner exec `
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
@@ -968,7 +1025,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:17 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:32 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1028,7 +1085,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.190 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1105,7 +1162,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:44 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:46 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1143,6 +1200,7 @@ ip cef
 no ipv6 cef
 !
 multilink bundle-name authenticated
+mpls label protocol ldp
 !
 !
 !
@@ -1164,8 +1222,12 @@ redundancy
 !
 !
 !
+interface Loopback0
+ ip address 66.235.125.107 255.255.255.255
+ ip ospf 1 area 0
+!
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.202 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1190,10 +1252,15 @@ interface GigabitEthernet0/3
  media-type rj45
 !
 interface GigabitEthernet0/4
- no ip address
+ description er2.las:gi0/4
+ ip address 66.235.115.209 255.255.255.252
+ ip ospf 1 area 0
  duplex auto
  speed auto
  media-type rj45
+!
+router ospf 1
+ mpls ldp autoconfig
 !
 ip forward-protocol nd
 !
@@ -1203,6 +1270,7 @@ no ip http secure-server
 !
 !
 !
+mpls ldp router-id Loopback0
 !
 control-plane
 !
@@ -1256,7 +1324,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:01 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:44 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1316,7 +1384,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.196 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1393,7 +1461,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:02:58 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:36 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1453,7 +1521,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.199 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1544,7 +1612,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:24 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:53 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1604,7 +1672,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.188 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1681,7 +1749,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:12 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:44 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1741,7 +1809,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.201 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1839,7 +1907,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:34 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:58 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1899,7 +1967,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.194 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1976,7 +2044,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:12 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:42 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2036,7 +2104,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.189 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2120,7 +2188,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:21 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:49 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2180,7 +2248,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.195 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2264,7 +2332,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:29 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:25 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2324,7 +2392,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.187 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2415,7 +2483,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:24 UTC Wed Nov 16 2016
+! Last configuration change at 21:55:09 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2475,7 +2543,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.193 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2559,7 +2627,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:25 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:07 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2619,7 +2687,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.184 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2726,7 +2794,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:02:23 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:19 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2786,7 +2854,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.185 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2891,7 +2959,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 22:03:32 UTC Wed Nov 16 2016
+! Last configuration change at 21:54:42 UTC Tue Nov 29 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2951,7 +3019,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 10.255.9.186 255.255.0.0
  shutdown
  duplex auto
  speed auto

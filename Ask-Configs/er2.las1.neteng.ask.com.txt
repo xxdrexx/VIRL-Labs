@@ -1,0 +1,570 @@
+--- JUNOS 13.3R6.5 built 2015-03-26 18:38:33 UTC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+root@er2% cli
+root@er2.las1> show configuration | display set 
+set version 13.3R6.5
+set system host-name er2.las1
+set system domain-name neteng.ask.com
+set system time-zone UTC
+set system authentication-order tacplus
+set system authentication-order password
+set system root-authentication encrypted-password "$1$uoo09a36$Qe2gQMTNRPP5I6jXTmVT//"
+set system tacplus-server 66.235.120.171 secret "$9$Hq5FCtO1IcApLNVbaJQFn/9pBIclK8"
+set system tacplus-server 66.235.120.171 source-address 66.235.115.2
+set system accounting events login
+set system accounting events change-log
+set system accounting events interactive-commands
+set system accounting destination tacplus
+set system login class RANCID permissions view
+set system login class RANCID permissions view-configuration
+set system login user remote full-name "All remote users"
+set system login user remote uid 2000
+set system login user remote class super-user
+set system login user showadmin uid 2001
+set system login user showadmin class RANCID
+set system services ssh
+set system syslog user * any emergency
+set system syslog host 66.235.119.4 any any
+set system syslog host 66.235.119.4 allow-duplicates
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system ntp peer 66.235.115.1
+set system ntp server 208.79.89.249 version 3
+set system ntp server 208.79.89.249 prefer
+set system ntp server 96.44.142.5 version 3
+set chassis aggregated-devices ethernet device-count 7
+set chassis fpc 2 sampling-instance instance-fpc2
+set services flow-monitoring version-ipfix template ipv4 flow-active-timeout 120
+set services flow-monitoring version-ipfix template ipv4 flow-inactive-timeout 60
+set services flow-monitoring version-ipfix template ipv4 ipv4-template
+set interfaces xe-2/0/0 description PEER:IPYX/088255//ZYO
+set interfaces xe-2/0/0 gigether-options no-auto-negotiation
+set interfaces xe-2/0/0 unit 0 family inet filter input EDGE_IN_GLOBAL
+set interfaces xe-2/0/0 unit 0 family inet sampling input
+set interfaces xe-2/0/0 unit 0 family inet address 208.185.102.206/30
+set interfaces xe-2/1/0 description lb1b.las1:las-eth1/13
+set interfaces xe-2/1/0 unit 0 family bridge interface-mode access
+set interfaces xe-2/1/0 unit 0 family bridge vlan-id 2
+set interfaces ge-2/2/0 description er0.las
+set interfaces ge-2/2/0 gigether-options 802.3ad ae1
+set interfaces ge-2/2/2 description fw0b.las-eth1/13
+set interfaces ge-2/2/2 gigether-options 802.3ad ae4
+set interfaces ge-2/2/3 description PEER:SWITCH-LAS-SAGG8S2-1
+set interfaces ge-2/2/3 gigether-options no-auto-negotiation
+set interfaces ge-2/2/3 unit 0 family inet filter input EDGE_IN_GLOBAL
+set interfaces ge-2/2/3 unit 0 family inet sampling input
+set interfaces ge-2/2/3 unit 0 family inet address 199.189.118.98/30
+set interfaces ge-2/2/6 description Level3-Wave.BCRT2211-er4.iad2.ge-2/3/4
+set interfaces ge-2/2/6 speed 1g
+set interfaces ge-2/2/6 mtu 9192
+set interfaces ge-2/2/6 link-mode full-duplex
+set interfaces ge-2/2/6 gigether-options no-auto-negotiation
+set interfaces ge-2/2/6 unit 0 family inet sampling input
+set interfaces ge-2/2/6 unit 0 family inet address 66.235.115.210/30
+set interfaces ge-2/2/6 unit 0 family mpls
+set interfaces ge-2/2/7 description name1.ask.com-eth2.1
+set interfaces ge-2/2/7 unit 0 family bridge interface-mode access
+set interfaces ge-2/2/7 unit 0 family bridge vlan-id 2
+set interfaces ge-2/3/0 description er1.las1
+set interfaces ge-2/3/0 gigether-options 802.3ad ae1
+set interfaces ge-2/3/2 description fw1b.las1-eth1/14
+set interfaces ge-2/3/2 gigether-options 802.3ad ae4
+set interfaces ge-2/3/3 description PEER:SWITCH-LAS-SAGG8S2-2
+set interfaces ge-2/3/3 gigether-options no-auto-negotiation
+set interfaces ge-2/3/3 unit 0 family inet filter input EDGE_IN_GLOBAL
+set interfaces ge-2/3/3 unit 0 family inet sampling input
+set interfaces ge-2/3/3 unit 0 family inet address 199.189.118.102/30
+set interfaces ge-2/3/6 description "P2P circuit to core2.las1-eth3/36"
+set interfaces ge-2/3/6 encapsulation ethernet-ccc
+set interfaces ge-2/3/6 unit 0 family ccc
+set interfaces ae1 description er1.las1
+set interfaces ae1 vlan-tagging
+set interfaces ae1 mtu 9192
+set interfaces ae1 aggregated-ether-options lacp active
+set interfaces ae1 unit 0 family bridge interface-mode trunk
+set interfaces ae1 unit 0 family bridge vlan-id-list 2
+set interfaces ae1 unit 0 family bridge vlan-id-list 10
+set interfaces ae4 description fw1b.las1
+set interfaces ae4 unit 0 family bridge interface-mode access
+set interfaces ae4 unit 0 family bridge vlan-id 2
+set interfaces fxp0 disable             
+set interfaces irb unit 2 description Vlan2-L3
+set interfaces irb unit 2 family inet sampling input
+set interfaces irb unit 2 family inet address 66.235.114.253/24 vrrp-group 2 virtual-address 66.235.114.254
+set interfaces irb unit 2 family inet address 66.235.114.253/24 vrrp-group 2 priority 100
+set interfaces irb unit 2 family inet address 66.235.114.253/24 vrrp-group 2 accept-data
+set interfaces irb unit 10 description Vlan10-L3
+set interfaces irb unit 10 family inet no-redirects
+set interfaces irb unit 10 family inet sampling input
+set interfaces irb unit 10 family inet address 66.235.115.202/30
+set interfaces irb unit 10 family mpls
+set interfaces lo0 unit 0 family inet filter input RE_FILTER_IN
+set interfaces lo0 unit 0 family inet address 66.235.115.2/32
+set snmp location "LAS1 - Las Vegas, NV."
+set snmp community dcnas.ask authorization read-only
+set snmp trap-options source-address lo0
+set snmp trap-group opennms version v2
+set snmp trap-group opennms categories link
+set snmp trap-group opennms categories routing
+set snmp trap-group opennms categories vrrp-events
+set snmp trap-group opennms categories configuration
+set snmp trap-group opennms targets 66.235.120.164
+set snmp trap-group opennms targets 199.190.255.164
+set forwarding-options sampling instance instance-fpc2 input rate 1
+set forwarding-options sampling instance instance-fpc2 family inet output flow-server 66.235.120.251 port 5382
+set forwarding-options sampling instance instance-fpc2 family inet output flow-server 66.235.120.251 autonomous-system-type origin
+set forwarding-options sampling instance instance-fpc2 family inet output flow-server 66.235.120.251 no-local-dump
+set forwarding-options sampling instance instance-fpc2 family inet output flow-server 66.235.120.251 version-ipfix template ipv4
+set forwarding-options sampling instance instance-fpc2 family inet output inline-jflow source-address 66.235.115.2
+set forwarding-options sampling instance instance-fpc2 family inet output inline-jflow flow-export-rate 100
+set routing-options static route 10.0.0.0/8 discard
+set routing-options static route 172.16.0.0/12 discard
+set routing-options static route 192.168.0.0/16 discard
+set routing-options static route 66.235.114.0/23 discard
+set routing-options static route 66.235.115.192/29 next-hop 66.235.114.5
+set routing-options static route 66.235.119.0/24 next-hop 66.235.114.5
+set routing-options aggregate route 66.235.126.0/24 policy AGGREGATE_ASK_ANYCAST
+set routing-options aggregate route 66.235.126.0/24 discard
+set routing-options aggregate route 66.235.118.0/24 policy AGGREGATE_ASK_ANYCAST_2
+set routing-options aggregate route 66.235.118.0/24 discard
+set routing-options autonomous-system 16798
+set routing-options autonomous-system loops 2
+set protocols mpls interface ge-2/3/6.0
+set protocols mpls interface ge-2/2/6.0
+set protocols mpls interface irb.10
+set protocols bgp group ISP type external
+set protocols bgp group ISP import ISP_IN
+set protocols bgp group ISP export ISP_OUT
+set protocols bgp group ISP neighbor 208.185.102.205 description Zayo
+set protocols bgp group ISP neighbor 208.185.102.205 import ZAYO_IN
+set protocols bgp group ISP neighbor 208.185.102.205 peer-as 6461
+set protocols bgp group ISP neighbor 199.189.118.101 export COREIP_OUT
+set protocols bgp group ISP neighbor 199.189.118.101 peer-as 22911
+set protocols bgp group ISP neighbor 199.189.118.97 export COREIP_OUT
+set protocols bgp group ISP neighbor 199.189.118.97 peer-as 22911
+set protocols bgp group INTERNAL type internal
+set protocols bgp group INTERNAL local-address 66.235.115.2
+set protocols bgp group INTERNAL export INTERNAL_OUT
+set protocols bgp group INTERNAL peer-as 16798
+set protocols bgp group INTERNAL neighbor 66.235.115.1 description er0.las
+set protocols bgp group INTERNAL neighbor 66.235.114.20 local-address 66.235.114.253
+set protocols bgp group INTERNAL neighbor 66.235.114.20 export GTM_OUT
+set protocols bgp group INTERNAL neighbor 66.235.114.40 local-address 66.235.114.253
+set protocols bgp group INTERNAL neighbor 66.235.114.40 export GTM_OUT
+set protocols bgp group ARBOR type internal
+set protocols bgp group ARBOR local-address 66.235.115.2
+set protocols bgp group ARBOR export ARBOR_OUT
+set protocols bgp group ARBOR cluster 66.235.115.2
+set protocols bgp group ARBOR peer-as 16798
+set protocols bgp group ARBOR neighbor 66.235.120.251
+set protocols ospf reference-bandwidth 40g
+set protocols ospf area 0.0.0.0 interface lo0.0
+set protocols ospf area 0.0.0.0 interface irb.10 interface-type p2p
+set protocols ospf area 0.0.0.0 interface ge-2/2/6.0 interface-type p2p
+set protocols ospf area 0.0.0.0 interface irb.2
+set protocols ldp track-igp-metric
+set protocols ldp interface ge-2/2/6.0
+set protocols ldp interface irb.10
+set protocols ldp interface lo0.0
+set protocols l2circuit neighbor 66.235.125.105 interface ge-2/3/6.0 virtual-circuit-id 222
+set protocols lldp interface ge-2/3/6 disable
+set protocols lldp interface all
+set policy-options prefix-list ASKPUB 64.81.232.84/32
+set policy-options prefix-list ASKPUB 64.141.48.240/28
+set policy-options prefix-list ASKPUB 66.235.112.0/20
+set policy-options prefix-list ASKPUB 78.137.177.208/29
+set policy-options prefix-list ASKPUB 78.137.178.0/27
+set policy-options prefix-list ASKPUB 83.147.148.12/30
+set policy-options prefix-list ASKPUB 94.254.17.126/32
+set policy-options prefix-list ASKPUB 148.87.107.6/32
+set policy-options prefix-list ASKPUB 185.23.44.0/23
+set policy-options prefix-list ASKPUB 195.99.160.64/26
+set policy-options prefix-list ASKPUB 199.190.255.0/24
+set policy-options prefix-list ASKPUB 206.47.99.96/28
+set policy-options prefix-list ASKPUB 206.80.1.0/24
+set policy-options prefix-list ASKPUB 217.138.9.120/29
+set policy-options prefix-list ANYCAST_RANGES 66.235.118.0/24
+set policy-options prefix-list ANYCAST_RANGES 66.235.126.0/24
+set policy-options prefix-list EBGP_PEERS 4.53.114.180/30
+set policy-options prefix-list EBGP_PEERS 46.33.92.88/30
+set policy-options prefix-list EBGP_PEERS 62.115.50.172/30
+set policy-options prefix-list EBGP_PEERS 63.218.175.196/30
+set policy-options prefix-list EBGP_PEERS 64.124.196.192/30
+set policy-options prefix-list EBGP_PEERS 65.116.65.36/30
+set policy-options prefix-list EBGP_PEERS 66.45.204.228/30
+set policy-options prefix-list EBGP_PEERS 74.125.50.12/30
+set policy-options prefix-list EBGP_PEERS 81.19.198.56/30
+set policy-options prefix-list EBGP_PEERS 83.147.183.144/30
+set policy-options prefix-list EBGP_PEERS 83.147.183.148/30
+set policy-options prefix-list EBGP_PEERS 134.159.208.48/30
+set policy-options prefix-list EBGP_PEERS 149.11.37.100/30
+set policy-options prefix-list EBGP_PEERS 193.242.111.0/24
+set policy-options prefix-list EBGP_PEERS 194.88.240.0/24
+set policy-options prefix-list EBGP_PEERS 199.189.118.96/30
+set policy-options prefix-list EBGP_PEERS 199.189.118.100/30
+set policy-options prefix-list EBGP_PEERS 203.144.48.4/30
+set policy-options prefix-list EBGP_PEERS 203.144.49.4/30
+set policy-options prefix-list EBGP_PEERS 203.144.51.4/30
+set policy-options prefix-list EBGP_PEERS 203.144.55.4/30
+set policy-options prefix-list EBGP_PEERS 205.129.18.80/30
+set policy-options prefix-list EBGP_PEERS 206.126.236.0/22
+set policy-options prefix-list EBGP_PEERS 208.185.23.160/30
+set policy-options prefix-list EBGP_PEERS 208.185.102.204/30
+set policy-options prefix-list EBGP_PEERS 208.185.185.248/30
+set policy-options prefix-list EBGP_PEERS 209.203.103.196/30
+set policy-options prefix-list EBGP_PEERS 212.73.251.156/30
+set policy-options prefix-list EBGP_PEERS 212.126.63.0/30
+set policy-options prefix-list EBGP_PEERS 212.126.63.4/30
+set policy-options prefix-list EBGP_PEERS 213.242.106.164/30
+set policy-options prefix-list EBGP_PEERS 217.30.80.60/30
+set policy-options prefix-list EBGP_PEERS 217.30.80.244/31
+set policy-options prefix-list EBGP_PEERS 217.30.81.4/30
+set policy-options prefix-list EBGP_PEERS 217.30.82.72/30
+set policy-options prefix-list EBGP_PEERS 217.30.83.36/30
+set policy-options prefix-list BOGONS 10.0.0.0/8
+set policy-options prefix-list BOGONS 127.0.0.0/8
+set policy-options prefix-list BOGONS 169.254.0.0/16
+set policy-options prefix-list BOGONS 172.16.0.0/12
+set policy-options prefix-list BOGONS 192.168.0.0/16
+set policy-options prefix-list BOGONS 224.0.0.0/4
+set policy-options prefix-list BOGONS 240.0.0.0/4
+set policy-options prefix-list NOFILTER 66.235.112.5/32
+set policy-options prefix-list NOFILTER 66.235.114.5/32
+set policy-options prefix-list NOFILTER 66.235.115.192/29
+set policy-options prefix-list NOFILTER 66.235.119.0/24
+set policy-options prefix-list NOFILTER 66.235.120.5/32
+set policy-options prefix-list NOFILTER 66.235.120.41/32
+set policy-options prefix-list NOFILTER 66.235.120.44/32
+set policy-options prefix-list NOFILTER 66.235.120.60/32
+set policy-options prefix-list NOFILTER 66.235.120.84/32
+set policy-options prefix-list NOFILTER 66.235.120.85/32
+set policy-options prefix-list NOFILTER 66.235.120.93/32
+set policy-options prefix-list NOFILTER 66.235.120.120/32
+set policy-options prefix-list NOFILTER 66.235.120.130/32
+set policy-options prefix-list NOFILTER 66.235.120.135/32
+set policy-options prefix-list NOFILTER 66.235.120.163/32
+set policy-options prefix-list NOFILTER 66.235.120.171/32
+set policy-options prefix-list NOFILTER 66.235.120.176/32
+set policy-options prefix-list NOFILTER 66.235.120.198/32
+set policy-options prefix-list NOFILTER 66.235.120.199/32
+set policy-options prefix-list NOFILTER 66.235.120.214/32
+set policy-options prefix-list NOFILTER 66.235.120.227/32
+set policy-options prefix-list NOFILTER 66.235.121.130/32
+set policy-options prefix-list NOFILTER 66.235.121.207/32
+set policy-options prefix-list NOFILTER 66.235.121.208/32
+set policy-options prefix-list NOFILTER 66.235.121.209/32
+set policy-options prefix-list NOFILTER 66.235.121.210/32
+set policy-options prefix-list NOFILTER 66.235.121.212/32
+set policy-options prefix-list NOFILTER 66.235.122.0/24
+set policy-options prefix-list NOFILTER 66.235.124.0/24
+set policy-options prefix-list NOFILTER 66.235.125.128/25
+set policy-options prefix-list NOFILTER 66.235.127.128/25
+set policy-options prefix-list NOFILTER 74.113.232.0/23
+set policy-options prefix-list NOFILTER 74.113.234.0/24
+set policy-options prefix-list NOFILTER 103.15.32.0/28
+set policy-options prefix-list NOFILTER 103.15.38.7/32
+set policy-options prefix-list NOFILTER 103.15.38.12/32
+set policy-options prefix-list NOFILTER 185.23.44.13/32
+set policy-options prefix-list NOFILTER 185.23.44.15/32
+set policy-options prefix-list NOFILTER 185.23.44.18/32
+set policy-options prefix-list NOFILTER 185.23.44.20/32
+set policy-options prefix-list NOFILTER 185.23.44.48/32
+set policy-options prefix-list NOFILTER 185.23.44.49/32
+set policy-options prefix-list NOFILTER 185.23.46.10/32
+set policy-options prefix-list NOFILTER 185.23.46.48/32
+set policy-options prefix-list NOFILTER 185.23.46.49/32
+set policy-options prefix-list NOFILTER 185.153.56.0/24
+set policy-options prefix-list NOFILTER 199.36.100.0/24
+set policy-options prefix-list NOFILTER 199.190.255.64/26
+set policy-options prefix-list NOFILTER 199.190.255.128/25
+set policy-options prefix-list NOFILTER 206.80.1.7/32
+set policy-options prefix-list NOFILTER 206.80.1.8/29
+set policy-options prefix-list NOFILTER 206.80.1.16/28
+set policy-options prefix-list NOFILTER 206.80.1.32/27
+set policy-options prefix-list NOFILTER 206.80.1.64/26
+set policy-options prefix-list NOFILTER 206.80.1.128/25
+set policy-options prefix-list NOFILTER 208.85.8.0/24
+set policy-options prefix-list RESTRICTED_PUBLIC_IPS 66.235.112.182/32
+set policy-options prefix-list RESTRICTED_PUBLIC_IPS 66.235.114.182/32
+set policy-options prefix-list RESTRICTED_PUBLIC_IPS 66.235.120.182/32
+set policy-options prefix-list ARBOR_ATAC 204.118.128.0/24
+set policy-options prefix-list ARBOR_ATAC 204.181.64.0/26
+set policy-options prefix-list ARBOR_ATAC 216.130.192.136/29
+set policy-options prefix-list ARBOR_ATAC 216.130.204.136/29
+set policy-options prefix-list NTP_GLOBAL_SERVERS 64.81.232.84/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 66.6.101.137/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 78.137.177.208/29
+set policy-options prefix-list NTP_GLOBAL_SERVERS 78.137.178.0/27
+set policy-options prefix-list NTP_GLOBAL_SERVERS 89.111.63.178/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 89.234.64.77/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 91.236.251.12/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 92.51.198.8/30
+set policy-options prefix-list NTP_GLOBAL_SERVERS 94.254.17.126/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 96.44.142.5/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 108.58.129.112/29
+set policy-options prefix-list NTP_GLOBAL_SERVERS 116.193.170.18/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 148.87.107.6/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 149.157.192.5/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 193.175.73.151/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 208.79.89.249/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 216.36.115.70/32
+set policy-options prefix-list NTP_GLOBAL_SERVERS 217.138.9.120/29
+set policy-options prefix-list NTP_GLOBAL_SERVERS 218.189.210.3/32
+set policy-options prefix-list OPENVPN_SERVERS 66.235.120.200/32
+set policy-options prefix-list OPENVPN_SERVERS 103.15.38.41/32
+set policy-options prefix-list OPENVPN_SERVERS 185.23.44.47/32
+set policy-options prefix-list OPENVPN_SERVERS 199.190.255.12/32
+set policy-options prefix-list OAKLAND-MGMT 10.0.50.0/24
+set policy-options prefix-list OAKLAND 10.0.0.0/16
+set policy-options policy-statement AGGREGATE_ASK_ANYCAST term ask_gtm from protocol bgp
+set policy-options policy-statement AGGREGATE_ASK_ANYCAST term ask_gtm from route-filter 66.235.126.0/24 longer
+set policy-options policy-statement AGGREGATE_ASK_ANYCAST term ask_gtm then accept
+set policy-options policy-statement AGGREGATE_ASK_ANYCAST term default then reject
+set policy-options policy-statement AGGREGATE_ASK_ANYCAST_2 term ask_gtm from protocol bgp
+set policy-options policy-statement AGGREGATE_ASK_ANYCAST_2 term ask_gtm from route-filter 66.235.118.0/24 longer
+set policy-options policy-statement AGGREGATE_ASK_ANYCAST_2 term ask_gtm then accept
+set policy-options policy-statement AGGREGATE_ASK_ANYCAST_2 term default then reject
+set policy-options policy-statement ARBOR_OUT term ASK_LAS from protocol static
+set policy-options policy-statement ARBOR_OUT term ASK_LAS from route-filter 66.235.114.0/23 exact
+set policy-options policy-statement ARBOR_OUT term ASK_LAS then accept
+set policy-options policy-statement ARBOR_OUT term ask_anycast from protocol aggregate
+set policy-options policy-statement ARBOR_OUT term ask_anycast from prefix-list ANYCAST_RANGES
+set policy-options policy-statement ARBOR_OUT term ask_anycast then accept
+set policy-options policy-statement ARBOR_OUT term default then accept
+set policy-options policy-statement COREIP_OUT term ASK_LAS from protocol static
+set policy-options policy-statement COREIP_OUT term ASK_LAS from route-filter 66.235.114.0/23 exact
+set policy-options policy-statement COREIP_OUT term ASK_LAS then accept
+set policy-options policy-statement COREIP_OUT term default then reject
+set policy-options policy-statement GTM_OUT term default then reject
+set policy-options policy-statement INTERNAL_OUT term default then next-hop self
+set policy-options policy-statement ISP_IN term bogons from route-filter 10.0.0.0/8 orlonger
+set policy-options policy-statement ISP_IN term bogons from route-filter 172.16.0.0/12 orlonger
+set policy-options policy-statement ISP_IN term bogons from route-filter 192.168.0.0/16 orlonger
+set policy-options policy-statement ISP_IN term bogons from route-filter 224.0.0.0/3 orlonger
+set policy-options policy-statement ISP_IN term bogons from route-filter 66.235.114.0/23 orlonger
+set policy-options policy-statement ISP_IN term bogons then reject
+set policy-options policy-statement ISP_OUT term ASK_LAS from protocol static
+set policy-options policy-statement ISP_OUT term ASK_LAS from route-filter 66.235.114.0/23 exact
+set policy-options policy-statement ISP_OUT term ASK_LAS from route-filter 66.235.119.0/24 exact
+set policy-options policy-statement ISP_OUT term ASK_LAS then accept
+set policy-options policy-statement ISP_OUT term ask_anycast from protocol aggregate
+set policy-options policy-statement ISP_OUT term ask_anycast from prefix-list ANYCAST_RANGES
+set policy-options policy-statement ISP_OUT term ask_anycast then accept
+set policy-options policy-statement ISP_OUT term default then reject
+set policy-options policy-statement STATIC->OSPF term LOCAL from protocol static
+set policy-options policy-statement STATIC->OSPF term LOCAL from route-filter 66.235.114.0/23 exact
+set policy-options policy-statement STATIC->OSPF term LOCAL then external type 1
+set policy-options policy-statement STATIC->OSPF term LOCAL then accept
+set policy-options policy-statement ZAYO_IN term bogons from route-filter 10.0.0.0/8 orlonger
+set policy-options policy-statement ZAYO_IN term bogons from route-filter 172.16.0.0/12 orlonger
+set policy-options policy-statement ZAYO_IN term bogons from route-filter 192.168.0.0/16 orlonger
+set policy-options policy-statement ZAYO_IN term bogons from route-filter 224.0.0.0/3 orlonger
+set policy-options policy-statement ZAYO_IN term bogons from route-filter 66.235.114.0/23 orlonger
+set policy-options policy-statement ZAYO_IN term bogons then reject
+set policy-options policy-statement ZAYO_IN term GOOG from as-path google_routes
+set policy-options policy-statement ZAYO_IN term GOOG then local-preference 120
+set policy-options policy-statement ZAYO_IN term SWS_PRICEGRABBER from route-filter 64.19.235.0/24 exact
+set policy-options policy-statement ZAYO_IN term SWS_PRICEGRABBER then local-preference 120
+set policy-options as-path google_routes ".* 15169$"
+set firewall family inet filter ctrl-plane term telnet from source-address 66.235.112.0/21
+set firewall family inet filter ctrl-plane term telnet from protocol tcp
+set firewall family inet filter ctrl-plane term telnet from destination-port telnet
+set firewall family inet filter ctrl-plane term telnet then accept
+set firewall family inet filter ctrl-plane term telnet-reject from protocol tcp
+set firewall family inet filter ctrl-plane term telnet-reject from destination-port telnet
+set firewall family inet filter ctrl-plane term telnet-reject then reject
+set firewall family inet filter ctrl-plane term ssh from source-prefix-list ASKPUB
+set firewall family inet filter ctrl-plane term ssh from protocol tcp
+set firewall family inet filter ctrl-plane term ssh from destination-port ssh
+set firewall family inet filter ctrl-plane term ssh then accept
+set firewall family inet filter ctrl-plane term ssh-reject from protocol tcp
+set firewall family inet filter ctrl-plane term ssh-reject from destination-port ssh
+set firewall family inet filter ctrl-plane term ssh-reject then reject
+set firewall family inet filter ctrl-plane term default then accept
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_DENY.1 from source-prefix-list BOGONS
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_DENY.1 then discard
+set firewall family inet filter EDGE_IN_GLOBAL term EDGE_NTP_SYNC from source-prefix-list NTP_GLOBAL_SERVERS
+set firewall family inet filter EDGE_IN_GLOBAL term EDGE_NTP_SYNC from source-prefix-list ASKPUB
+set firewall family inet filter EDGE_IN_GLOBAL term EDGE_NTP_SYNC from protocol udp
+set firewall family inet filter EDGE_IN_GLOBAL term EDGE_NTP_SYNC from destination-port ntp
+set firewall family inet filter EDGE_IN_GLOBAL term EDGE_NTP_SYNC then accept
+set firewall family inet filter EDGE_IN_GLOBAL term EDGE_NTP_SYNC_SOURCE from source-prefix-list NTP_GLOBAL_SERVERS
+set firewall family inet filter EDGE_IN_GLOBAL term EDGE_NTP_SYNC_SOURCE from source-prefix-list ASKPUB
+set firewall family inet filter EDGE_IN_GLOBAL term EDGE_NTP_SYNC_SOURCE from protocol udp
+set firewall family inet filter EDGE_IN_GLOBAL term EDGE_NTP_SYNC_SOURCE from source-port ntp
+set firewall family inet filter EDGE_IN_GLOBAL term EDGE_NTP_SYNC_SOURCE then accept
+set firewall family inet filter EDGE_IN_GLOBAL term OPENVPN_IN from destination-prefix-list OPENVPN_SERVERS
+set firewall family inet filter EDGE_IN_GLOBAL term OPENVPN_IN from destination-port 80
+set firewall family inet filter EDGE_IN_GLOBAL term OPENVPN_IN from destination-port 443
+set firewall family inet filter EDGE_IN_GLOBAL term OPENVPN_IN from destination-port 1194
+set firewall family inet filter EDGE_IN_GLOBAL term OPENVPN_IN then accept
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.1 from source-prefix-list ASKPUB
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.1 then accept
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.2 from destination-address 66.235.120.251/32
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.2 from destination-address 66.235.125.126/32
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.2 from destination-address 185.23.45.30/32
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.2 from source-prefix-list ARBOR_ATAC
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.2 from protocol tcp
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.2 from destination-port 22
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.2 from destination-port 443
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.2 then accept
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.3 from source-address 50.18.204.17/32
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.3 from source-address 50.18.204.18/32
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.3 from source-address 50.112.135.234/32
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.3 from source-address 50.112.135.235/32
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.3 from source-address 107.21.62.200/32
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.3 from source-address 216.14.15.130/32
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.3 from protocol tcp
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.3 from destination-port 636
+set firewall family inet filter EDGE_IN_GLOBAL term SOURCE_EXCEPTION.3 then accept
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.3 from destination-address 66.235.122.0/24
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.3 from protocol icmp
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.3 from protocol udp
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.3 from icmp-type echo-request
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.3 then discard
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.114.20/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.114.40/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.120.20/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.120.33/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.120.34/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.120.35/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.120.40/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.120.42/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.120.43/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.120.44/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.120.0/28
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 66.235.114.0/28
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 185.23.44.0/28
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-address 185.23.44.16/31
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from protocol tcp
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 from destination-port 443
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_RESTRICTED.1 then discard
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.1 from destination-prefix-list NOFILTER
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.1 then accept
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 from destination-address 66.235.126.100/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 from destination-address 66.235.118.100/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 from destination-address 66.235.120.20/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 from destination-address 66.235.120.40/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 from destination-address 66.235.112.20/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 from destination-address 66.235.112.40/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 from destination-address 66.235.114.40/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 from destination-address 66.235.114.20/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 from destination-address 185.23.44.16/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 from destination-address 185.23.44.17/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 from destination-port 53
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.2 then accept
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.4 from destination-address 185.23.45.1/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.4 from destination-address 66.235.125.104/32
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.4 from protocol gre
+set firewall family inet filter EDGE_IN_GLOBAL term DESTINATION_EXCEPTION.4 then accept
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.1 from protocol icmp
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.1 then accept
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.2 from protocol tcp
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.2 from tcp-established
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.2 then accept
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.3 from protocol udp
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.3 from source-port domain
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.3 then accept
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from protocol tcp
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 80
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 8080
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 8081
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 5222
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 443
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 3306
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 3130
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 1463
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 82
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 25
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 21
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 from destination-port 8083
+set firewall family inet filter EDGE_IN_GLOBAL term PORT_EXCEPTION.4 then accept
+set firewall family inet filter EDGE_IN_GLOBAL term ACTIVE_FTP_EXCEPTION from destination-address 185.23.44.32/28
+set firewall family inet filter EDGE_IN_GLOBAL term ACTIVE_FTP_EXCEPTION from destination-address 185.23.44.4/31
+set firewall family inet filter EDGE_IN_GLOBAL term ACTIVE_FTP_EXCEPTION from protocol tcp
+set firewall family inet filter EDGE_IN_GLOBAL term ACTIVE_FTP_EXCEPTION from source-port 20
+set firewall family inet filter EDGE_IN_GLOBAL term ACTIVE_FTP_EXCEPTION then accept
+set firewall family inet filter EDGE_IN_GLOBAL term DEFAULT then discard
+set firewall family inet filter RE_FILTER_IN term ICMP from protocol icmp
+set firewall family inet filter RE_FILTER_IN term ICMP from icmp-type echo-reply
+set firewall family inet filter RE_FILTER_IN term ICMP from icmp-type echo-request
+set firewall family inet filter RE_FILTER_IN term ICMP from icmp-type time-exceeded
+set firewall family inet filter RE_FILTER_IN term ICMP from icmp-type unreachable
+set firewall family inet filter RE_FILTER_IN term ICMP from icmp-type 30
+set firewall family inet filter RE_FILTER_IN term ICMP then accept
+set firewall family inet filter RE_FILTER_IN term UDPTraceRoutes from protocol udp
+set firewall family inet filter RE_FILTER_IN term UDPTraceRoutes from destination-port 33434-33534
+set firewall family inet filter RE_FILTER_IN term UDPTraceRoutes then accept
+set firewall family inet filter RE_FILTER_IN term EDGE_NTP_SYNC from source-prefix-list NTP_GLOBAL_SERVERS
+set firewall family inet filter RE_FILTER_IN term EDGE_NTP_SYNC from protocol udp
+set firewall family inet filter RE_FILTER_IN term EDGE_NTP_SYNC from destination-port ntp
+set firewall family inet filter RE_FILTER_IN term EDGE_NTP_SYNC then accept
+set firewall family inet filter RE_FILTER_IN term ALL_SERVICES from source-prefix-list ASKPUB
+set firewall family inet filter RE_FILTER_IN term ALL_SERVICES then accept
+set firewall family inet filter RE_FILTER_IN term EXT_BGP from source-prefix-list EBGP_PEERS
+set firewall family inet filter RE_FILTER_IN term EXT_BGP from protocol tcp
+set firewall family inet filter RE_FILTER_IN term EXT_BGP from port bgp
+set firewall family inet filter RE_FILTER_IN term EXT_BGP then accept
+set firewall family inet filter RE_FILTER_IN term REJECT_ALL then discard
+set bridge-domains VLAN10 vlan-id 10
+set bridge-domains VLAN10 routing-interface irb.10
+set bridge-domains VLAN2 vlan-id 2
+set bridge-domains VLAN2 routing-interface irb.2
+
+root@er2.las1> 
+
+root@er2.las1> 
+
+root@er2.las1> 
+
+root@er2.las1> 
+
+root@er2.las1> 
+
+root@er2.las1> 
+
+root@er2.las1> 
+
+root@er2.las1> 
