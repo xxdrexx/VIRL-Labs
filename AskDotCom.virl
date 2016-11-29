@@ -1020,6 +1020,7 @@ end</entry>
         <interface id="2" name="GigabitEthernet0/3"/>
         <interface id="3" name="GigabitEthernet0/4"/>
         <interface id="4" name="GigabitEthernet0/5"/>
+        <interface id="5" name="GigabitEthernet0/6"/>
     </node>
     <node name="er1.iad" type="SIMPLE" subtype="IOSv" location="579,294">
         <extensions>
@@ -1157,6 +1158,7 @@ end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/1"/>
         <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
     </node>
     <node name="er4.iad" type="SIMPLE" subtype="IOSv" location="480,332">
         <extensions>
@@ -1319,6 +1321,7 @@ end</entry>
         <interface id="1" name="GigabitEthernet0/2"/>
         <interface id="2" name="GigabitEthernet0/3"/>
         <interface id="3" name="GigabitEthernet0/4"/>
+        <interface id="4" name="GigabitEthernet0/5"/>
     </node>
     <node name="er2.iad" type="SIMPLE" subtype="IOSv" location="578,331">
         <extensions>
@@ -1456,6 +1459,7 @@ end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/1"/>
         <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
     </node>
     <node name="er3.dub" type="SIMPLE" subtype="IOSv" location="478,101">
         <extensions>
@@ -1607,6 +1611,7 @@ end</entry>
         <interface id="1" name="GigabitEthernet0/2"/>
         <interface id="2" name="GigabitEthernet0/3"/>
         <interface id="3" name="GigabitEthernet0/4"/>
+        <interface id="4" name="GigabitEthernet0/5"/>
     </node>
     <node name="er1.dub" type="SIMPLE" subtype="IOSv" location="589,100">
         <extensions>
@@ -1744,6 +1749,7 @@ end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/1"/>
         <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
     </node>
     <node name="er4.dub" type="SIMPLE" subtype="IOSv" location="479,150">
         <extensions>
@@ -1902,6 +1908,7 @@ end</entry>
         <interface id="2" name="GigabitEthernet0/3"/>
         <interface id="3" name="GigabitEthernet0/4"/>
         <interface id="4" name="GigabitEthernet0/5"/>
+        <interface id="5" name="GigabitEthernet0/6"/>
     </node>
     <node name="er2.dub" type="SIMPLE" subtype="IOSv" location="588,148">
         <extensions>
@@ -2039,6 +2046,7 @@ end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/1"/>
         <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
     </node>
     <node name="er1.hkg" type="SIMPLE" subtype="IOSv" location="239,419">
         <extensions>
@@ -3151,4 +3159,8 @@ end</entry>
     <connection dst="/virl:topology/virl:node[18]/virl:interface[5]" src="/virl:topology/virl:node[3]/virl:interface[3]"/>
     <connection dst="/virl:topology/virl:node[18]/virl:interface[6]" src="/virl:topology/virl:node[19]/virl:interface[5]"/>
     <connection dst="/virl:topology/virl:node[19]/virl:interface[6]" src="/virl:topology/virl:node[20]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[7]/virl:interface[3]" src="/virl:topology/virl:node[6]/virl:interface[6]"/>
+    <connection dst="/virl:topology/virl:node[9]/virl:interface[3]" src="/virl:topology/virl:node[8]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[11]/virl:interface[3]" src="/virl:topology/virl:node[10]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[13]/virl:interface[3]" src="/virl:topology/virl:node[12]/virl:interface[6]"/>
 </topology>
