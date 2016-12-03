@@ -4,7 +4,7 @@
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:08 UTC Tue Nov 29 2016
+! Last configuration change at 22:22:22 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -69,7 +69,7 @@ interface Loopback0
  ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.192 255.255.0.0
+ ip address 10.255.9.213 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -97,11 +97,10 @@ interface GigabitEthernet0/1.10
  ip ospf 1 area 0
 !
 interface GigabitEthernet0/2
- description Zayo
- ip address 208.185.23.162 255.255.255.252
+ description TWTC
+ ip address 209.203.103.198 255.255.255.252
  duplex auto
  speed auto
- media-type rj45
 !
 router ospf 1
  mpls ldp autoconfig
@@ -166,7 +165,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:31 UTC Tue Nov 29 2016
+! Last configuration change at 22:10:39 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -231,7 +230,7 @@ interface Loopback0
  ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.198 255.255.0.0
+ ip address 10.255.9.219 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -256,11 +255,10 @@ interface GigabitEthernet0/1.10
  ip ospf 1 area 0
 !
 interface GigabitEthernet0/2
- description TWTC
- ip address 209.203.103.198 255.255.255.252
+ description Zayo
+ ip address 208.185.23.162 255.255.255.252
  duplex auto
  speed auto
- media-type rj45
 !
 interface GigabitEthernet0/3
  description er1.las:gi0/3
@@ -334,7 +332,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:58 UTC Tue Nov 29 2016
+! Last configuration change at 22:33:47 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -394,7 +392,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.183 255.255.0.0
+ ip address 10.255.9.204 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -479,7 +477,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:55:05 UTC Tue Nov 29 2016
+! Last configuration change at 22:11:20 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -544,7 +542,7 @@ interface Loopback0
  ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.197 255.255.0.0
+ ip address 10.255.9.218 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -658,7 +656,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:53:57 UTC Tue Nov 29 2016
+! Last configuration change at 21:59:40 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -723,7 +721,7 @@ interface Loopback0
  ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.191 255.255.0.0
+ ip address 10.255.9.212 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -838,7 +836,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:50 UTC Tue Nov 29 2016
+! Last configuration change at 22:24:52 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -904,47 +902,43 @@ interface Loopback0
  ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.200 255.255.0.0
+ ip address 10.255.9.221 255.255.0.0
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
- description er4.iad:gi0/1
+ description er4.iad:gi0/1 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
-!
-interface GigabitEthernet0/1.2
- description VLAN2 - External
- encapsulation dot1Q 2
  bridge-group 2
 !
-interface GigabitEthernet0/1.10
- description P2P - MPLS
- encapsulation dot1Q 10
- ip address 66.235.125.77 255.255.255.252
- ip ospf 1 area 0
-!
 interface GigabitEthernet0/2
- no ip address
+ description LEVEL3
+ ip address 4.53.114.182 255.255.255.252
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/3
+ description er1.iad:gi0/2 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
 !
 interface GigabitEthernet0/4
- no ip address
+ description er4.dub:gi0/4 P2P - MPLS
+ ip address 185.23.45.50 255.255.255.252
+ ip ospf 1 area 0
  duplex auto
  speed auto
  media-type rj45
+ mpls ip
 !
 interface GigabitEthernet0/5
  description er1.las:gi0/4
@@ -953,10 +947,30 @@ interface GigabitEthernet0/5
  duplex auto
  speed auto
  media-type rj45
+ mpls ip
+!
+interface GigabitEthernet0/6
+ description er1.iad:gi0/3 P2P - MPLS
+ ip address 66.235.125.94 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface GigabitEthernet0/7
+ description er4.iad:gi0/6 P2P - MPLS
+ ip address 66.235.125.77 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
 !
 interface BVI2
  description VLAN2-L3
  ip address 66.235.121.200 255.255.254.0
+ ip ospf 1 area 0
 !
 router ospf 1
 !
@@ -1027,7 +1041,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:32 UTC Tue Nov 29 2016
+! Last configuration change at 22:24:30 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1065,6 +1079,7 @@ ip cef
 no ipv6 cef
 !
 multilink bundle-name authenticated
+mpls label protocol ldp
 !
 !
 !
@@ -1082,28 +1097,65 @@ redundancy
 !
 !
 !
+bridge irb
 !
 !
 !
+!
+interface Loopback0
+ ip address 66.235.125.104 255.255.255.255
+ ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.190 255.255.0.0
+ ip address 10.255.9.211 255.255.0.0
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
+ description er2.iad:gi0/1 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
+ ethernet cfm block
 !
 interface GigabitEthernet0/2
+ description er3.iad:gi0/3 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
+!
+interface GigabitEthernet0/3
+ description er3.iad:gi0/6 P2P - MPLS
+ ip address 66.235.125.93 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface GigabitEthernet0/4
+ description er2.iad:gi0/4 P2P - MPLS
+ ip address 66.235.125.113 255.255.255.248
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface BVI2
+ ip address 66.235.120.252 255.255.254.0
+ standby 2 ip 66.235.120.254
+ standby 2 priority 150
+ standby 2 preempt
+ ip ospf 1 area 0
+!
+router ospf 1
 !
 ip forward-protocol nd
 !
@@ -1113,9 +1165,12 @@ no ip http secure-server
 !
 !
 !
+mpls ldp router-id Loopback0
 !
 control-plane
 !
+bridge 2 protocol ieee
+bridge 2 route ip
 banner exec `
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
@@ -1166,7 +1221,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:46 UTC Tue Nov 29 2016
+! Last configuration change at 22:09:44 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1222,6 +1277,7 @@ redundancy
 !
 !
 !
+bridge irb
 !
 !
 !
@@ -1231,29 +1287,34 @@ interface Loopback0
  ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.202 255.255.0.0
+ ip address 10.255.9.223 255.255.0.0
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
+ description er3.iad:gi0/1 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
 !
 interface GigabitEthernet0/2
- no ip address
+ description Zayo
+ ip address 208.185.185.250 255.255.255.252
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/3
+ description er2.iad:gi0/2 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
 !
 interface GigabitEthernet0/4
  description er2.las:gi0/4
@@ -1262,9 +1323,31 @@ interface GigabitEthernet0/4
  duplex auto
  speed auto
  media-type rj45
+ mpls ip
+!
+interface GigabitEthernet0/5
+ description er2.iad:gi0/3 P2P - MPLS
+ ip address 66.235.125.98 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface GigabitEthernet0/6
+ description er3.iad:gi0/7 P2P - MPLS
+ ip address 66.235.125.78 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface BVI2
+ ip address 66.235.121.201 255.255.254.0
+ ip ospf 1 area 0
 !
 router ospf 1
- mpls ldp autoconfig
 !
 ip forward-protocol nd
 !
@@ -1278,6 +1361,8 @@ mpls ldp router-id Loopback0
 !
 control-plane
 !
+bridge 2 protocol ieee
+bridge 2 route ip
 banner exec `
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
@@ -1330,7 +1415,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:44 UTC Tue Nov 29 2016
+! Last configuration change at 22:13:18 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1368,6 +1453,7 @@ ip cef
 no ipv6 cef
 !
 multilink bundle-name authenticated
+mpls label protocol ldp
 !
 !
 !
@@ -1385,28 +1471,63 @@ redundancy
 !
 !
 !
+bridge irb
 !
 !
 !
+!
+interface Loopback0
+ ip address 66.235.125.105 255.255.255.255
+ ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.196 255.255.0.0
+ ip address 10.255.9.217 255.255.0.0
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
+ description er1.iad:gi0/1 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
 !
 interface GigabitEthernet0/2
+ description er4.iad:gi0/3 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
+!
+interface GigabitEthernet0/3
+ description er4.iad:gi0/5 P2P - MPLS
+ ip address 66.235.125.97 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface GigabitEthernet0/4
+ description er1.iad:gi0/4 P2P - MPLS
+ ip address 66.235.125.114 255.255.255.248
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface BVI2
+ ip address 66.235.120.253 255.255.254.0
+ standby 2 ip 66.235.120.254
+ standby 2 preempt
+ ip ospf 1 area 0
+!
+router ospf 1
 !
 ip forward-protocol nd
 !
@@ -1416,9 +1537,12 @@ no ip http secure-server
 !
 !
 !
+mpls ldp router-id Loopback0
 !
 control-plane
 !
+bridge 2 protocol ieee
+bridge 2 route ip
 banner exec `
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
@@ -1469,7 +1593,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:36 UTC Tue Nov 29 2016
+! Last configuration change at 22:13:04 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1507,6 +1631,7 @@ ip cef
 no ipv6 cef
 !
 multilink bundle-name authenticated
+mpls label protocol ldp
 !
 !
 !
@@ -1524,40 +1649,75 @@ redundancy
 !
 !
 !
+bridge irb
 !
 !
 !
+!
+interface Loopback0
+ ip address 185.23.45.3 255.255.255.255
+ ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.199 255.255.0.0
+ ip address 10.255.9.220 255.255.0.0
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
+ description er4.dub:gi0/1 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
 !
 interface GigabitEthernet0/2
- no ip address
+ description COGENT
+ ip address 149.11.37.102 255.255.255.252
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/3
+ description er1.dub:gi0/2 VLAN2 - External
+ no ip address
+ duplex auto
+ speed auto
+ media-type rj45
+ bridge-group 2
+!
+interface GigabitEthernet0/4
+ description er1.ams:gi0/3 P2P - MPLS
  no ip address
  duplex auto
  speed auto
  media-type rj45
 !
-interface GigabitEthernet0/4
- no ip address
+interface GigabitEthernet0/5
+ description er1.dub:gi0/3 P2P - MPLS
+ ip address 185.23.45.34 255.255.255.252
+ ip ospf 1 area 0
  duplex auto
  speed auto
  media-type rj45
+ mpls ip
+!
+interface GigabitEthernet0/6
+ description er4.dub:gi0/7 P2P - MPLS
+ ip address 185.23.45.41 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface BVI2
+ ip address 185.23.44.7 255.255.255.0
+ ip ospf 1 area 0
+!
+router ospf 1
 !
 ip forward-protocol nd
 !
@@ -1567,9 +1727,12 @@ no ip http secure-server
 !
 !
 !
+mpls ldp router-id Loopback0
 !
 control-plane
 !
+bridge 2 protocol ieee
+bridge 2 route ip
 banner exec `
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
@@ -1622,7 +1785,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:53 UTC Tue Nov 29 2016
+! Last configuration change at 22:15:08 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1660,6 +1823,7 @@ ip cef
 no ipv6 cef
 !
 multilink bundle-name authenticated
+mpls label protocol ldp
 !
 !
 !
@@ -1677,28 +1841,64 @@ redundancy
 !
 !
 !
+bridge irb
 !
 !
 !
+!
+interface Loopback0
+ ip address 185.23.45.1 255.255.255.255
+ ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.188 255.255.0.0
+ ip address 10.255.9.209 255.255.0.0
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
+ description er2.dub:gi0/1 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
 !
 interface GigabitEthernet0/2
+ description er3.dub:gi0/3 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
+!
+interface GigabitEthernet0/3
+ description er3.dub:gi0/5 P2P - MPLS
+ ip address 185.23.45.33 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface GigabitEthernet0/4
+ description er2.dub:gi0/4 P2P - MPLS
+ ip address 185.23.45.45 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface BVI2
+ ip address 185.23.44.2 255.255.255.0
+ standby 2 ip 185.23.44.1
+ standby 2 priority 200
+ standby 2 preempt
+ ip ospf 1 area 0
+!
+router ospf 1
 !
 ip forward-protocol nd
 !
@@ -1708,9 +1908,12 @@ no ip http secure-server
 !
 !
 !
+mpls ldp router-id Loopback0
 !
 control-plane
 !
+bridge 2 protocol ieee
+bridge 2 route ip
 banner exec `
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
@@ -1761,7 +1964,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:44 UTC Tue Nov 29 2016
+! Last configuration change at 22:06:04 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1799,6 +2002,7 @@ ip cef
 no ipv6 cef
 !
 multilink bundle-name authenticated
+mpls label protocol ldp
 !
 !
 !
@@ -1816,46 +2020,86 @@ redundancy
 !
 !
 !
+bridge irb
 !
 !
 !
+!
+interface Loopback0
+ ip address 185.23.45.4 255.255.255.255
+ ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.201 255.255.0.0
+ ip address 10.255.9.222 255.255.0.0
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
+ description er3.dub:gi0/1 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
+ ethernet cfm block
 !
 interface GigabitEthernet0/2
- no ip address
+ description LEVEL3
+ ip address 212.73.251.158 255.255.255.252
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/3
+ description er2.dub:gi0/2 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
 !
 interface GigabitEthernet0/4
- no ip address
+ description er3.iad:gi0/4 P2P - MPLS
+ ip address 185.23.45.49 255.255.255.252
+ ip ospf 1 area 0
  duplex auto
  speed auto
  media-type rj45
+ mpls ip
 !
 interface GigabitEthernet0/5
+ description er1.ams:gi0/3 P2P - MPLS
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ mpls ip
+!
+interface GigabitEthernet0/6
+ description er2.dub:gi0/3 P2P - MPLS
+ ip address 185.23.45.38 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface GigabitEthernet0/7
+ description er3.dub:gi0/6 P2P - MPLS
+ ip address 185.23.45.42 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface BVI2
+ ip address 185.23.44.8 255.255.255.0
+ ip ospf 1 area 0
+!
+router ospf 1
 !
 ip forward-protocol nd
 !
@@ -1865,9 +2109,12 @@ no ip http secure-server
 !
 !
 !
+mpls ldp router-id Loopback0
 !
 control-plane
 !
+bridge 2 protocol ieee
+bridge 2 route ip
 banner exec `
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
@@ -1921,7 +2168,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:58 UTC Tue Nov 29 2016
+! Last configuration change at 23:16:37 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -1959,6 +2206,7 @@ ip cef
 no ipv6 cef
 !
 multilink bundle-name authenticated
+mpls label protocol ldp
 !
 !
 !
@@ -1976,28 +2224,62 @@ redundancy
 !
 !
 !
+bridge irb
 !
 !
 !
+!
+interface Loopback0
+ ip address 185.23.45.2 255.255.255.255
+ ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.194 255.255.0.0
+ ip address 10.255.9.215 255.255.0.0
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
+ description er1.dub:gi0/1 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
 !
 interface GigabitEthernet0/2
+ description er4.dub:gi0/3 VLAN2 - External
  no ip address
  duplex auto
  speed auto
  media-type rj45
+ bridge-group 2
+!
+interface GigabitEthernet0/3
+ description er4.dub:gi0/6 P2P - MPLS
+ ip address 185.23.45.37 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface GigabitEthernet0/4
+ description er1.dub:gi0/4 P2P - MPLS
+ ip address 185.23.45.46 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+ mpls ip
+!
+interface BVI2
+ ip address 185.23.44.3 255.255.255.0
+ standby 2 ip 185.23.44.1
+ standby 2 preempt
+!
+router ospf 1
 !
 ip forward-protocol nd
 !
@@ -2007,9 +2289,12 @@ no ip http secure-server
 !
 !
 !
+mpls ldp router-id Loopback0
 !
 control-plane
 !
+bridge 2 protocol ieee
+bridge 2 route ip
 banner exec `
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
@@ -2060,7 +2345,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:42 UTC Tue Nov 29 2016
+! Last configuration change at 22:33:08 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2120,7 +2405,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.189 255.255.0.0
+ ip address 10.255.9.210 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2204,7 +2489,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:49 UTC Tue Nov 29 2016
+! Last configuration change at 22:22:16 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2264,7 +2549,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.195 255.255.0.0
+ ip address 10.255.9.216 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2348,7 +2633,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:25 UTC Tue Nov 29 2016
+! Last configuration change at 22:29:11 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2386,6 +2671,7 @@ ip cef
 no ipv6 cef
 !
 multilink bundle-name authenticated
+mpls label protocol ldp
 !
 !
 !
@@ -2403,12 +2689,17 @@ redundancy
 !
 !
 !
+bridge irb
 !
 !
 !
+!
+interface Loopback0
+ ip address 185.23.47.1 255.255.255.255
+ ip ospf 1 area 0
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.187 255.255.0.0
+ ip address 10.255.9.208 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2421,7 +2712,8 @@ interface GigabitEthernet0/1
  media-type rj45
 !
 interface GigabitEthernet0/2
- no ip address
+ description ZAYO
+ ip address 208.185.24.66 255.255.255.252
  duplex auto
  speed auto
  media-type rj45
@@ -2438,6 +2730,15 @@ interface GigabitEthernet0/4
  speed auto
  media-type rj45
 !
+interface BVI2
+ ip address 185.23.46.2 255.255.255.0
+ standby 2 ip 185.23.46.1
+ standby 2 priority 150
+ standby 2 preempt
+ ip ospf 1 area 0
+!
+router ospf 1
+!
 ip forward-protocol nd
 !
 !
@@ -2446,9 +2747,12 @@ no ip http secure-server
 !
 !
 !
+mpls ldp router-id Loopback0
 !
 control-plane
 !
+bridge 2 protocol ieee
+bridge 2 route ip
 banner exec `
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
@@ -2499,7 +2803,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:55:09 UTC Tue Nov 29 2016
+! Last configuration change at 22:26:36 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2559,7 +2863,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.193 255.255.0.0
+ ip address 10.255.9.214 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2643,7 +2947,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:07 UTC Tue Nov 29 2016
+! Last configuration change at 22:35:44 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2703,7 +3007,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.184 255.255.0.0
+ ip address 10.255.9.205 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2810,7 +3114,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:19 UTC Tue Nov 29 2016
+! Last configuration change at 22:31:44 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -2870,7 +3174,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.185 255.255.0.0
+ ip address 10.255.9.206 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2975,7 +3279,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 21:54:42 UTC Tue Nov 29 2016
+! Last configuration change at 22:24:13 UTC Fri Dec 2 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -3035,7 +3339,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 10.255.9.186 255.255.0.0
+ ip address 10.255.9.207 255.255.0.0
  shutdown
  duplex auto
  speed auto
